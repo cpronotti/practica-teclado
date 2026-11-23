@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club Encuentro | Práctica de teclado</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="inicio">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="sitio">
+    <div class="contenedor"><p class="marca">Club Encuentro</p></div>
+  </header>
+  <nav class="principal" aria-label="Principal">
+    <div class="contenedor">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="index.html#actividades">Actividades</a></li>
+        <li><a href="horarios.html">Horarios</a></li>
+        <li><a href="index.html#anotate">Anotate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <aside class="practica" aria-labelledby="t-practica">
+    <div class="contenedor">
+      <h2 id="t-practica">Practicá con el teclado</h2>
+      <p>Esta página es de práctica. Podés hacer todo con calma, no hay tiempo ni errores. Abajo de todo hay una ayuda que te dice qué hacer.</p>
+
+      <p id="t-modo"><strong>¿Con qué practicás?</strong></p>
+      <div class="grupo" role="group" aria-labelledby="t-modo">
+        <button type="button" class="boton sec" data-modo="botonera" aria-pressed="false">Con botonera</button>
+        <button type="button" class="boton sec" data-modo="teclado" aria-pressed="false">Con teclado</button>
+      </div>
+      <div class="grupo">
+        <button type="button" class="boton sec" data-dibujo aria-pressed="false">Mostrar dibujo de teclas</button>
+        <button type="button" class="boton sec" data-reiniciar>Empezar de nuevo</button>
+      </div>
+
+      <h3>Tus misiones</h3>
+      <ol class="misiones" id="lista-misiones"></ol>
+    </div>
+  </aside>
+
+  <main id="contenido" tabindex="-1">
+    <div class="contenedor">
+      <h1>Club Encuentro</h1>
+      <p>Un club de barrio para pasar buenos ratos. Elegí una actividad y anotate. Es fácil y no cuesta nada.</p>
+
+      <h2 id="actividades">Actividades</h2>
+
+      <article class="tarjeta">
+        <h3>Yoga suave</h3>
+        <p>Movimientos lentos para estirar el cuerpo. No hace falta tener experiencia.</p>
+        <button type="button" class="boton" data-detalle aria-expanded="false" aria-controls="det-yoga">Ver más sobre Yoga suave</button>
+        <p id="det-yoga" hidden>Martes a las 18:00. Traé una manta o una colchoneta. Dura una hora.</p>
+      </article>
+
+      <article class="tarjeta">
+        <h3>Taller de cocina</h3>
+        <p>Cocinamos juntos una receta sencilla y después la comemos.</p>
+        <button type="button" class="boton" data-detalle aria-expanded="false" aria-controls="det-cocina">Ver más sobre Taller de cocina</button>
+        <p id="det-cocina" hidden>Jueves a las 17:00. Ponemos todos los ingredientes. Dura dos horas.</p>
+      </article>
+
+      <article class="tarjeta">
+        <h3>Club de lectura</h3>
+        <p>Cada mes leemos un cuento corto y lo charlamos con un mate.</p>
+        <button type="button" class="boton" data-detalle aria-expanded="false" aria-controls="det-lectura">Ver más sobre Club de lectura</button>
+        <p id="det-lectura" hidden>Sábados a las 10:00. Te prestamos el cuento. Dura una hora.</p>
+      </article>
+
+      <p><a href="horarios.html">Ver horarios de todas las actividades</a></p>
+
+      <h2 id="anotate">Anotate</h2>
+      <form id="form-anotate" novalidate>
+        <fieldset aria-describedby="error-actividades">
+          <legend>¿A qué actividad te querés anotar?</legend>
+          <div class="opcion"><input type="checkbox" id="a-yoga" name="actividad" value="Yoga suave"><label for="a-yoga">Yoga suave</label></div>
+          <div class="opcion"><input type="checkbox" id="a-cocina" name="actividad" value="Taller de cocina"><label for="a-cocina">Taller de cocina</label></div>
+          <div class="opcion"><input type="checkbox" id="a-lectura" name="actividad" value="Club de lectura"><label for="a-lectura">Club de lectura</label></div>
+          <p class="error" id="error-actividades" role="alert"></p>
+        </fieldset>
+
+        <div class="campo">
+          <label for="nombre">Tu nombre (obligatorio)</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="given-name" aria-describedby="error-nombre">
+          <p class="error" id="error-nombre" role="alert"></p>
+        </div>
+
+        <button type="submit" class="boton">Anotarme</button>
+        <p class="exito" id="mensaje-form" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="sitio">
+    <div class="contenedor">
+      <p>Club Encuentro es un sitio inventado para practicar. No existe de verdad: no se guarda ni se envía ningún dato.</p>
+    </div>
+  </footer>
+
+  <noscript><p>Esta página de práctica necesita JavaScript para mostrar la ayuda.</p></noscript>
+  <script src="practica.js"></script>
+</body>
+</html>
